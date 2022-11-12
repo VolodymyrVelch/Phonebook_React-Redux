@@ -11,6 +11,18 @@ export const Main = styled.div`
   color: #010101;
 `;
 
+export const PhonebokCont = styled.div`
+  padding: 40px;
+  padding-top: 0;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #010101;
+`
+
+
+
 export const Contact = styled.div`
    display: flex;
      margin-left:auto;
