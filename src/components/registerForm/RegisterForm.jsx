@@ -1,7 +1,7 @@
 import { Formik } from "formik"
 import { MainForm, Lable,InputField, ErrorMess, Button  } from "./RegisterForm.styled";
 import * as yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { register } from "redux/auth/operation";
 // import { useDebugValue } from "react";
 

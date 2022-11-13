@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { Layout } from './layout/Layout';
-import { useEffect, lazy } from "react";
+import {  lazy } from "react";
 import { Main } from './General.styled';
 
 
