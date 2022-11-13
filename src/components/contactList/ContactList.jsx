@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operation';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import { deleteContact } from 'redux/contacts/operation';
+import { selectContacts, selectFilter } from 'redux/contacts/selectors';
 import { ContactField, Contact, Button, Number, NumberWrap } from './ContactList.styled'
 
 

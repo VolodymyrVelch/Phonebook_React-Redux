@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { filterContscts } from 'redux/filterSlice';
+import { filterContscts } from 'redux/contacts/filterSlice';
 import {InputField, Lable} from './Filter.styled'
 
 

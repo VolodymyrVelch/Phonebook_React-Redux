@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
-  // забираємо помилки з консолі  уникаючи перерахованих екшенів
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -9,12 +9,22 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { persistedPhonebookReducer } from './phonebookSlice';
 // import { contactReducer } from './phonebookSlice';
-import { filterReducer } from './filterSlice';
+import storage from 'redux-persist/lib/storage';
+import { persistedPhonebookReducer } from './contacts/phonebookSlice';
+import { filterReducer } from './contacts/filterSlice';
+import { authReducer } from './auth/slice';
+// import persistReducer from 'redux-persist/es/persistReducer';
+
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
 
 export const store = configureStore({
   reducer: {
+    auth: persistReducer(authPersistConfig, authReducer),
     phonebooks: persistedPhonebookReducer,
     filter: filterReducer,
   },

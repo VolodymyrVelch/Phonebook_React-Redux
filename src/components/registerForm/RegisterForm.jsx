@@ -2,12 +2,14 @@ import { Formik } from "formik"
 import { MainForm, Lable,InputField, ErrorMess, Button  } from "./RegisterForm.styled";
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
+import { register } from "redux/auth/operation";
+// import { useDebugValue } from "react";
 
 const initialValues = { name: '', email: '', password: '' }
 const massageName = "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan";
 const EmailAlert = "Please enter valid email";
 const PasswordAlert = "Password should be at least 6 characters"
-const patternName = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
+const patternName = /^[a-zA-ZÀ-ÖÙ-öù-ÿĀ-žḀ-ỿ0-9\s\-.]+$/;
 
 let schema = yup.object().shape({
     name: yup.string().matches(patternName, massageName).required('Name is required'),
@@ -17,8 +19,8 @@ let schema = yup.object().shape({
 
 export const RegisterForm = () => {
         const dispatch = useDispatch();
-        const handleSubmit = (values, { resetForm }) => {
-        console.log(values)
+    const handleSubmit = (values, { resetForm }) => {
+        dispatch(register(values))
         resetForm()
     }
     return (

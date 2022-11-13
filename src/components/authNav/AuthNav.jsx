@@ -6,7 +6,7 @@ export const AuthNav = () => {
     <NavLink to='/register'>
         Register
     </NavLink>
-    <NavLink to='login'>
+    <NavLink to='/login'>
         Log In
     </NavLink>
     </div>

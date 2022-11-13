@@ -1,12 +1,11 @@
-import { AuthNav } from 'components/authNav/AuthNav';
-import { Nav,LinkStyle  } from './Navigation.styled';
+
+import {LinkStyle  } from './Navigation.styled';
 
 export const Navigation = () => {
     return (
-    <Nav>
+    <nav>
         <LinkStyle to="/">Home</LinkStyle>
         <LinkStyle to="/phonebook">Contacts</LinkStyle>
-        <AuthNav></AuthNav>
-    </Nav>
+    </nav>
     );
 };

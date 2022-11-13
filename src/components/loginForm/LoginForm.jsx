@@ -1,7 +1,8 @@
 import { Formik } from "formik"
 import { MainForm, Lable,InputField, ErrorMess, Button  } from "./LoginForm.styled";
 import * as yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { logIn } from "redux/auth/operation";
 
 const initialValues = { email: '', password: '' }
 const EmailAlert = "Please enter valid email";
@@ -15,7 +16,7 @@ let schema = yup.object().shape({
 export const LoginForm = () => {
     const dispatch = useDispatch();
     const handleSubmit = (values, { resetForm }) => {
-        console.log(values)
+        dispatch(logIn(values))
         resetForm()
     }
     return (
