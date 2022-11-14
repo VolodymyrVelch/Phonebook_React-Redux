@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "redux/contacts/operation";
 import { selectError, selectIsLoading } from "redux/contacts/selectors";
-import { PhonebokCont, Contact } from "../components/General.styled";
+import { Contact } from "../components/General.styled";
 import { ContactForm } from "../components/contactForm/ContactForm";
 import { Filter } from "../components/filter/Filter";
 import { ContactList } from "../components/contactList/ContactList";
@@ -16,7 +16,7 @@ export default function Phonebook() {
     dispatch(fetchContacts())
     }, [dispatch]);
     return (
-        <PhonebokCont>
+        <div>
             <h1>Phonebook</h1>
             <ContactForm />
             <h2>Contacts</h2>
@@ -25,5 +25,5 @@ export default function Phonebook() {
                 {isLoading && !error && <b>Request in progress...</b>}
                 <ContactList />
             </Contact>
-        </PhonebokCont>);
+        </div>);
 }

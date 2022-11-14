@@ -4,7 +4,7 @@ import {  lazy } from "react";
 import { Main } from './General.styled';
 
 
-const HomePage = lazy(() => import('../pages/Home'))
+const HomePage = lazy(() => import('../pages/Home/Home'))
 const PhoneBook = lazy(() => import('../pages/Phonebook'))
 const RegisterPage = lazy(() => import('../pages/Register'))
 const LoginPage = lazy(() => import('../pages/Login'))
@@ -15,8 +15,8 @@ export function App() {
 
   return (
     <Main>
-
-    <Routes>
+      <Routes>
+        
       <Route path='/' element={<Layout/>}>
         <Route index element={<HomePage />} />
         <Route  path='/phonebook' element={<PhoneBook/>}></Route>
