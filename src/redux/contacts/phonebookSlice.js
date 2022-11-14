@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operation';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -46,15 +44,5 @@ const phoneBookSlice = createSlice({
     },
   },
 });
-// Зберігаємо дані в LocalStorage за допомогою бібліотеки persist-redux
-const persistConfig = {
-  key: 'root',
-  storage,
-};
 
-export const persistedPhonebookReducer = persistReducer(
-  persistConfig,
-  phoneBookSlice.reducer
-);
-
-// export const contactReducer = phoneBookSlice.reducer;
+export const phonebookReducer = phoneBookSlice.reducer;

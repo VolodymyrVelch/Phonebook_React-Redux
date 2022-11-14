@@ -1,29 +1,49 @@
 import { Route, Routes } from 'react-router-dom'
-import { Layout } from './layout/Layout';
-import {  lazy } from "react";
+import { Layout } from './Layout';
+import {  lazy, useEffect} from "react";
 import { Main } from './General.styled';
+import { useDispatch } from 'react-redux';
+import { useAuth } from './hooks';
+import { refreshUser } from 'redux/auth/operation';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
 
 
 const HomePage = lazy(() => import('../pages/Home/Home'))
-const PhoneBook = lazy(() => import('../pages/Phonebook'))
+const PhoneBook = lazy(() => import('../pages/Phonebook/Phonebook'))
 const RegisterPage = lazy(() => import('../pages/Register'))
 const LoginPage = lazy(() => import('../pages/Login'))
 
 
 export function App() {
-
+const dispatch = useDispatch()
+const {isRefreshing} =  useAuth()
+  
+  useEffect(() => {
+  dispatch(refreshUser())
+  }, [dispatch]);
 
   return (
+    isRefreshing ? ('Fetching user data...'): (
     <Main>
       <Routes>
-        
-      <Route path='/' element={<Layout/>}>
-        <Route index element={<HomePage />} />
-        <Route  path='/phonebook' element={<PhoneBook/>}></Route>
-        <Route  path='/register' element={<RegisterPage/>}></Route>
-        <Route  path='/login' element={<LoginPage/>}></Route>
-      </Route>
+        <Route path='/' element={<Layout/>}>
+          <Route index element={<HomePage />} />
+            <Route
+              path='/register'
+              element={
+                <RestrictedRoute redirectTo='/phonebook' component={RegisterPage}/>}/>
+            <Route
+              path='/login'
+              element={
+                <RestrictedRoute redirectTo='/phonebook' component={LoginPage} />}/>
+            <Route
+              path='/phonebook'
+              element={
+                <PrivateRoute component={PhoneBook} redirectTo='/login'/> } />
+          </Route>
       </Routes>
     </Main>
-    );
-  }
+    )
+  );
+}

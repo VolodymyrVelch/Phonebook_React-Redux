@@ -1,7 +1,8 @@
 import { useAuth } from "components/hooks";
 import { useDispatch } from "react-redux";
 import { logOut } from "redux/auth/operation";
-import { Button } from "./UserMenu.styled";
+import { Button, UserGreating, User } from "./UserMenu.styled";
+import {BiUserCircle}  from 'react-icons/bi'
 
 export const UserMenu = () => {
     const dispatch = useDispatch()
@@ -10,7 +11,8 @@ export const UserMenu = () => {
     const handleLogOut = () => dispatch(logOut())
     
     return <div>
-        <p>Welcome, {user.name} </p>
+        <UserGreating>welcome!</UserGreating>
+        <User><BiUserCircle size="30"></BiUserCircle>  {user.name}</User>
         <Button type='button' onClick={handleLogOut}>Logout</Button>
     </div>;
 }

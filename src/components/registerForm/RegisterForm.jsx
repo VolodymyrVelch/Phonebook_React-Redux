@@ -3,7 +3,6 @@ import { MainForm, Lable,InputField, ErrorMess, Button  } from "./RegisterForm.s
 import * as yup from 'yup';
 import { useDispatch} from 'react-redux';
 import { register } from "redux/auth/operation";
-// import { useDebugValue } from "react";
 
 const initialValues = { name: '', email: '', password: '' }
 const massageName = "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan";
@@ -28,25 +27,24 @@ export const RegisterForm = () => {
             initialValues={initialValues}
             onSubmit={handleSubmit}
             validationSchema={schema}>
-
-        <MainForm  autoComplete="off">
-            <Lable>
-                Username
-                <InputField type="text" name="name"  />
-                </Lable>
-                <ErrorMess name="name" component="p" />
-            <Lable htmlFor="">
-                Email
-                <InputField type="email" name="email"  />
-                </Lable>
-                <ErrorMess name="email" component="p" />
-            <Lable htmlFor="">
-                Password
-                <InputField type="password" name="password" />
-                </Lable>
-                <ErrorMess name="password" component="p" />
-            <Button type='submit'>Register</Button>
-        </MainForm>
+                <MainForm  autoComplete="off">
+                    <Lable>
+                        Username
+                        <InputField type="text" name="name"  />
+                        </Lable>
+                        <ErrorMess name="name" component="p" />
+                    <Lable htmlFor="">
+                        Email
+                        <InputField type="email" name="email"  />
+                        </Lable>
+                        <ErrorMess name="email" component="p" />
+                    <Lable htmlFor="">
+                        Password
+                        <InputField type="password" name="password" />
+                        </Lable>
+                        <ErrorMess name="password" component="p" />
+                    <Button type='submit'>Register</Button>
+                </MainForm>
         </Formik>
     )
 }

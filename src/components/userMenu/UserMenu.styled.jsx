@@ -14,3 +14,20 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
       transition: all 300ms ease;
    }
 `
+
+export const UserGreating = styled.p`
+    font-size: medium;
+    font-weight: 400;
+    margin: 5px;
+
+    `
+export const User = styled.p`
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    
+    font-weight: 700;
+    margin: 5px;
+    margin-bottom: 10px;
+    color:  #525355;;
+    `

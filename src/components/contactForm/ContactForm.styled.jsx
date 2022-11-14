@@ -4,7 +4,10 @@ import styled from "styled-components";
 export const MainForm = styled(Form)`
     display: flex;
     flex-direction: column;
-    padding:20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
     width: 500px;
     margin-left:auto;
     margin-right: auto;
@@ -55,8 +58,8 @@ export const ErrorMess = styled(ErrorMessage)`
 `
 export const Button = styled.button`
     padding: 10px;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;

@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "redux/contacts/operation";
 import { selectError, selectIsLoading } from "redux/contacts/selectors";
-import { Contact } from "../components/General.styled";
-import { ContactForm } from "../components/contactForm/ContactForm";
-import { Filter } from "../components/filter/Filter";
-import { ContactList } from "../components/contactList/ContactList";
+import { Contact } from "../../components/General.styled";
+import { ContactForm } from "../../components/contactForm/ContactForm";
+import { Filter } from "../../components/filter/Filter";
+import { ContactList } from "../../components/contactList/ContactList";
 import { useEffect } from "react";
+import {AddContactInfo, ContactsTitle } from "./Phonebook.styled";
 
 export default function Phonebook() {
     const dispatch = useDispatch();
@@ -17,9 +18,9 @@ export default function Phonebook() {
     }, [dispatch]);
     return (
         <div>
-            <h1>Phonebook</h1>
+            <AddContactInfo>Type name & phone number to add to the contact list</AddContactInfo>
             <ContactForm />
-            <h2>Contacts</h2>
+            <ContactsTitle>Contacts</ContactsTitle>
             <Contact>
                 <Filter />
                 {isLoading && !error && <b>Request in progress...</b>}

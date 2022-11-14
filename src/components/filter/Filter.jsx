@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import { filterContscts } from 'redux/contacts/filterSlice';
 import {InputField, Lable} from './Filter.styled'
 
-
 export const Filter = () => {
   const dispatch = useDispatch()
   const inputData = e => {

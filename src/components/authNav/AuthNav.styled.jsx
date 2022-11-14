@@ -5,7 +5,7 @@ export const LinkStyle = styled(NavLink)`
   color: black;
   text-decoration: none;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   transition: all 500ms ease;
   

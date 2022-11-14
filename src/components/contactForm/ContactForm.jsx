@@ -8,7 +8,7 @@ import { MainForm , Lable, InputField,ErrorMess,Button} from './ContactForm.styl
 import Notiflix from 'notiflix';
 
 
-// присвоюємо в константи умови для алідації
+// присвоюємо в константи умови для валідації
 const patternName = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 const massageName = "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan";
 const patternPhone = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s./0-9]*$/g;
@@ -20,7 +20,7 @@ let schema = yup.object().shape({
     number: yup.string().matches(patternPhone, massagePhone).required('A phone number is required')
 });
 
-//  початкові дані  стейту  для  скидання форми (не враховуємо перманентні дані які введені для тестування)
+
 const initialValues = { name: '', number: '' }
 
 export const ContactForm = () => {
