@@ -4,12 +4,12 @@ import { RegisterForm } from 'components/registerForm/RegisterForm';
 // import { selectError } from 'redux/auth/selectors';
 import { useSelector } from 'react-redux';
 import { selectError } from 'redux/auth/selectors';
-
+import { SectionTitle } from 'components/General.styled';
 
 export default function Register() {
      const error = useSelector(selectError);
     return <div>
-            <h2>Registration</h2>
+        <SectionTitle>Registration</SectionTitle>
         <RegisterForm />
         {error && <h3>{error}</h3>}
     </div>;

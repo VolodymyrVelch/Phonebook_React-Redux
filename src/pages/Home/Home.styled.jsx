@@ -28,14 +28,13 @@ transition: all 300ms ease;
 `
 
 export const Phonebook = styled.h1`
-
     margin-top: 10px;
     color: #1651B8;
     `
 
 export const UseInfo = styled.h3`
-margin: 5px;
-color: #F45707;
-font-style: italic;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 5px;
+    color: #F45707;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 `

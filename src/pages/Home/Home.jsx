@@ -2,15 +2,15 @@ import { MainContent, ContactsBookLine, Phonebook, UseInfo } from "./Home.styled
 import { useState } from 'react';
 
 export default function Home() {
-    const [state, setState] = useState("");
+    const [isClickedContacts , setIsClickedContacts ] = useState ("");
     
     const handleClick = () => {
-        return setState(true)
+        return setIsClickedContacts (true)
     }
     return <MainContent>
         <h2>Home Page</h2>
         <ContactsBookLine size="70"  onClick={handleClick}/>
-        {state? (<UseInfo>To continue you should register  or log in</UseInfo>):''}
+        {isClickedContacts ? (<UseInfo>To continue you should register  or log in</UseInfo>):''}
         <Phonebook>Your Phonebook</Phonebook>
     </MainContent>
 }

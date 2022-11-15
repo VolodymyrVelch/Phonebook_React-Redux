@@ -5,10 +5,16 @@ export const AddContactInfo = styled.p`
     font-style: italic;
     font-weight: 600;
     margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
     color: #1651B8;
     `
 
 export const ContactsTitle = styled.h2`
     margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
 `
 
