@@ -15,6 +15,7 @@ export const Contact = styled.div`
    display: flex;
     margin-left:auto;
     margin-right: auto;
+    margin-bottom: 20px;
     flex-direction: column;
     padding:20px;
     width: 500px;
