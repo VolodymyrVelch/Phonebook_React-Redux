@@ -31,3 +31,8 @@ export const User = styled.p`
     margin-bottom: 10px;
     color:  #525355;;
     `
+export const UserBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`

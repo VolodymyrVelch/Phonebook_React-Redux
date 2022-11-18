@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { Layout } from './Layout';
 import {  lazy, useEffect} from "react";
-import { Main } from './General.styled';
 import { useDispatch } from 'react-redux';
 import { useAuth } from './hooks';
 import { refreshUser } from 'redux/auth/operation';
@@ -25,7 +24,6 @@ const {isRefreshing} =  useAuth()
 
   return (
     isRefreshing ? ('Fetching user data...'): (
-    <Main>
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<HomePage />} />
@@ -43,7 +41,6 @@ const {isRefreshing} =  useAuth()
                 <PrivateRoute component={PhoneBook} redirectTo='/login'/> } />
           </Route>
       </Routes>
-    </Main>
     )
   );
 }

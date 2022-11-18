@@ -1,17 +1,6 @@
 
 import styled from 'styled-components';
 
-export const Main = styled.div`
-  padding-top: 20px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 40px;
-  margin: 20px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #010101;
-`;
 
 export const PhonebokCont = styled.div`
   padding: 40px;
